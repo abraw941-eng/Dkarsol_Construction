@@ -20,7 +20,10 @@
 
         :root { --primary: #535da1; --dark: #111; --success: #0ddb66; }
         body { font-family: 'Inter', sans-serif; line-height: 1.7; color: #333; overflow-x: hidden; }
-        h1,h2,h3,h4,h5,h6 { font-weight: 700; color: var(--dark); }
+        h1,h2,h3,h4,h5,h6 { font-weight: 700; color: var(--dark);
+                                        background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;}
 
         /* Floating WhatsApp */
         .whatsapp-float {
@@ -37,6 +40,9 @@
             min-height: 100vh; background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)),
             url('images/WhatsApp Image 2025-11-27 at 15.53.22_41b8529a.jpg') center/cover no-repeat fixed;
             color: white; display: flex; align-items: center;
+                          background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
             
         }
         .hero h1 { font-size: 4.5rem; font-weight: 900; }
@@ -427,4 +433,5 @@ export default function ContactForm() {
 </body>
 
 </html>
+
 
