@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DKARSOL Roofing & Carpentry</title>
+<style>
+  body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f0f2f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+
+  .open-popup-btn {
+    padding: 12px 25px;
+    background-color: #d35400;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s ease;
+  }
+
+  .open-popup-btn:hover {
+    background-color: #b94700;
+  }
+
+  .popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    animation: fadeIn 0.4s forwards;
+  }
+
+  .popup {
+    background: white;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 600px;
+    padding: 25px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    transform: scale(0.7);
+    opacity: 0;
+    animation: popupIn 0.5s forwards;
+    position: relative;
+  }
+
+  .close-popup {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: #e74c3c;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  .popup h2 {
+    margin-top: 0;
+    color: #d35400;
+    text-align: center;
+  }
+
+  .popup p {
+    font-size: 16px;
+    margin: 15px 0;
+    line-height: 1.5;
+  }
+
+  .popup ul {
+    list-style: disc inside;
+    padding-left: 0;
+  }
+
+  .popup li {
+    margin-bottom: 10px;
+  }
+
+  @keyframes popupIn {
+    to {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+
+  @keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+  }
+</style>
+</head>
+<body>
+
+<button class="open-popup-btn">Learn About Roofing & Carpentry</button>
+
+<div class="popup-overlay" id="popupOverlay">
+  <div class="popup">
+    <button class="close-popup" id="closePopup">&times;</button>
+    <h2>DKARSOL Roofing & Carpentry</h2>
+    <p>At DKARSOL, we provide strong, durable, and professionally crafted roofing and carpentry services. We ensure your structure is safe, well-finished, and built to last through quality workmanship and reliable materials.</p>
+    <p>Our services include:</p>
+    <ul>
+      <li>New roof installation (metal, shingle, tile, etc.)</li>
+      <li>Roof repairs and maintenance</li>
+      <li>Wood framing and structural carpentry</li>
+      <li>Ceiling and decking carpentry</li>
+      <li>Custom wooden fittings and finishes</li>
+      <li>Waterproofing and roof reinforcement</li>
+    </ul>
+  </div>
+</div>
+
+<script>
+  const openBtn = document.querySelector('.open-popup-btn');
+  const overlay = document.getElementById('popupOverlay');
+  const closeBtn = document.getElementById('closePopup');
+
+  openBtn.addEventListener('click', () => {
+    overlay.style.display = 'flex';
+  });
+
+  closeBtn.addEventListener('click', () => {
+    overlay.style.display = 'none';
+  });
+
+  overlay.addEventListener('click', (e) => {
+    if (e.target === overlay) {
+      overlay.style.display = 'none';
+    }
+  });
+</script>
+
+</body>
+</html>

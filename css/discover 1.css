@@ -1,0 +1,130 @@
+   body {
+        margin: 0;
+        padding: 0;
+        font-family: "Poppins", sans-serif;
+        background: #f3f4f6;
+        transition: .4s ease;
+    }
+
+    /* Main Button */
+    .open-popup-btn {
+        padding: 14px 32px;
+        background: #2563eb;
+        color: #fff;
+        border: none;
+        border-radius: 12px;
+        cursor: pointer;
+        font-size: 17px;
+        margin: 40px;
+        font-weight: 500;
+        transition: .3s ease;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+
+    .open-popup-btn:hover {
+        background: #1e4ecf;
+        transform: scale(1.03);
+    }
+
+    /* Blur effect behind popup */
+    .blurred {
+        filter: blur(8px);
+        pointer-events: none;
+        user-select: none;
+    }
+
+    /* Popup Overlay (full screen) */
+    .popup-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: none;
+        justify-content: center;
+        align-items: center;
+        background: rgba(0, 0, 0, 0.35);
+        backdrop-filter: blur(10px);
+        animation: fadeIn .35s ease forwards;
+        z-index: 1000;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+
+    /* Popup Box – Modern Glassmorphism */
+    .popup-box {
+        width: min(90%, 450px);
+        background: rgba(255, 255, 255, 0.25);
+        padding: 32px 24px;
+        border-radius: 22px;
+        backdrop-filter: blur(20px);
+        box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        animation: popup .45s ease;
+        border: 1px solid rgba(255,255,255,0.4);
+        text-align: center;
+    }
+
+    @keyframes popup {
+        from { transform: scale(.6); opacity: 0; }
+        to { transform: scale(1); opacity: 1; }
+    }
+
+    /* Close Button */
+    .close-btn {
+        position: absolute;
+        top: 18px;
+        right: 24px;
+        font-size: 28px;
+        border: none;
+        background: none;
+        cursor: pointer;
+        color: #fff;
+        transition: 0.25s;
+    }
+
+    .close-btn:hover {
+        transform: scale(1.2);
+        color: #e2e2e2;
+    }
+
+    /* Animated Circle Icon */
+    .animated-circle {
+        width: 95px;
+        height: 95px;
+        margin: auto;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #2563eb, #10b981);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 34px;
+        color: white;
+        font-weight: 600;
+        margin-bottom: 20px;
+        animation: float 2.3s infinite ease-in-out;
+        box-shadow: 0 12px 25px rgba(0,0,0,0.25);
+    }
+
+    @keyframes float {
+        0% { transform: translateY(0); }
+        50% { transform: translateY(-10px); }
+        100% { transform: translateY(0); }
+    }
+
+    /* Responsive Text */
+    h2 {
+        color: #fff;
+        font-size: clamp(20px, 3.5vw, 28px);
+        margin-bottom: 10px;
+    }
+
+    p {
+        color: #f8f8f8;
+        font-size: clamp(14px, 3vw, 17px);
+        line-height: 1.6;
+        margin: 0;
+        padding: 0 5px;
+    }

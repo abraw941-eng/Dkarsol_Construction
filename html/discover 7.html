@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DKARSOL – Plumbing & Electrical Oversight</title>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        background: #f5f5f5;
+    }
+
+    /* MAIN BUTTON */
+    .service-btn {
+        padding: 12px 20px;
+        background: #111;
+        color: #fff;
+        border: none;
+        border-radius: 8px;
+        margin: 20px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: 0.3s ease;
+    }
+
+    .service-btn:hover {
+        background: #333;
+    }
+
+    /* POPUP BACKGROUND */
+    .popup-bg {
+        display: none;
+        position: fixed;
+        top: 0; 
+        left: 0;
+        width: 100%; 
+        height: 100%;
+        background: rgba(0,0,0,0.55);
+        backdrop-filter: blur(4px);
+        justify-content: center;
+        align-items: center;
+        padding: 15px;
+        z-index: 1000;
+    }
+
+    /* POPUP BOX */
+    .popup-box {
+        background: #fff;
+        width: 90%;
+        max-width: 420px;
+        border-radius: 15px;
+        padding: 22px;
+        animation: slideUp 0.45s ease;
+        box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+    }
+
+    /* HEADER TEXT */
+    .popup-box h2 {
+        margin-top: 0;
+        text-align: center;
+        color: #111;
+    }
+
+    .popup-box h3 {
+        color: #333;
+        margin-top: 18px;
+    }
+
+    /* CLOSE BUTTON */
+    .close-btn {
+        padding: 10px 18px;
+        background: #111;
+        color: #fff;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        margin-top: 10px;
+    }
+
+    /* ANIMATION */
+    @keyframes slideUp {
+        from { transform: translateY(50px); opacity: 0; }
+        to { transform: translateY(0); opacity: 1; }
+    }
+</style>
+
+</head>
+<body>
+
+<!-- OPEN POPUP BUTTON -->
+<button class="service-btn" onclick="openPopup()">Plumbing & Electrical Oversight</button>
+
+
+<!-- POPUP BACKGROUND -->
+<div id="popup" class="popup-bg" onclick="closePopup()">
+
+    <!-- POPUP CONTENT BOX -->
+    <div class="popup-box" onclick="event.stopPropagation()">
+
+        <h2>Plumbing & Electrical Oversight</h2>
+
+        <p style="font-size: 15px; color:#333; line-height: 1.6;">
+            At <strong>DKARSOL Construction</strong>, we ensure that all plumbing and electrical 
+            systems in your project are properly planned, safely installed, and thoroughly inspected.  
+            Our oversight guarantees that every pipe, wire, and connection meets industry standards, 
+            prevents future faults, and supports long-lasting performance.
+        </p>
+
+        <h3>Our Services Include:</h3>
+
+        <ul style="font-size: 15px; color:#333; line-height: 1.6; padding-left: 20px;">
+            <li>Full Plumbing Installation & Maintenance</li>
+            <li>Electrical Wiring, Fittings & System Setup</li>
+            <li>Water Supply Line Layout & Pipework</li>
+            <li>Drainage, Sewage & Waste System Installation</li>
+            <li>Electrical Load Planning & Safety Checks</li>
+            <li>Fault Detection, Repairs & System Upgrades</li>
+        </ul>
+
+        <div style="text-align: center;">
+            <button class="close-btn" onclick="closePopup()">Close</button>
+        </div>
+
+    </div>
+</div>
+
+
+<!-- JAVASCRIPT -->
+<script>
+function openPopup() {
+    document.getElementById("popup").style.display = "flex";
+}
+
+function closePopup() {
+    document.getElementById("popup").style.display = "none";
+}
+</script>
+
+</body>
+</html>
